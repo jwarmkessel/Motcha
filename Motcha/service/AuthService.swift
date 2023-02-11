@@ -44,6 +44,25 @@ class AuthService {
             }
         }
     }
+    
+    static func signUp(username: String, password: String, options: String, signedInHandler: @escaping (Bool) -> Void) {
+        Amplify.Auth.signUp(username: username, password: password, options: nil) { result in
+            switch result {
+            case .success:
+                print("\(TAG) signUp success")
+                getAWSCredentials {
+                    getCurrentUser {
+                        signedInHandler(true)
+                    }
+                }
+                
+            case .failure(let error):
+                print("\(TAG) sign up error \(error)")
+                signedInHandler(false)
+
+            }
+        }
+    }
 
     private static func getAWSCredentials(completion: @escaping () -> Void) {
         Amplify.Auth.fetchAuthSession { result in
