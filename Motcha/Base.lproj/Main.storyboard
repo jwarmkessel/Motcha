@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DdC-KX-pHA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DdC-KX-pHA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Amazon Chime SDK Messaging Demo-->
+        <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SigninViewController" id="BYZ-38-t0r" customClass="SignInViewController" customModule="AmazonChimeSDKMessagingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SigninViewController" id="BYZ-38-t0r" customClass="SignInViewController" customModule="Motcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYa-Sb-A6O">
-                                <rect key="frame" x="167" y="357.5" width="80" height="44"/>
+                                <rect key="frame" x="20" y="373.5" width="367" height="44"/>
                                 <accessibility key="accessibilityConfiguration" identifier="SignInButton"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="P4X-OV-QQ7"/>
-                                    <constraint firstAttribute="height" constant="44" id="bg1-Uo-WIq"/>
+                                    <constraint firstAttribute="height" constant="44" id="7Rj-pw-Ecp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Sign in"/>
@@ -31,100 +30,144 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-zS-9aM">
-                                <rect key="frame" x="140" y="235.5" width="134.5" height="36"/>
+                                <rect key="frame" x="24" y="235.5" width="363" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="gN1-bC-HNF"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="ghh-4f-hE3"/>
+                                    <constraint firstAttribute="height" constant="44" id="gN1-bC-HNF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-kF-irE">
-                                <rect key="frame" x="147" y="291.5" width="120" height="36"/>
+                                <rect key="frame" x="24" y="299.5" width="363" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="VNh-ff-ctz"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="sNQ-H5-UzZ"/>
+                                    <constraint firstAttribute="height" constant="44" id="VNh-ff-ctz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Cognito User Pools" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6A-u8-gl3">
-                                <rect key="frame" x="52.5" y="168" width="309" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or you can get AWS credentials via Credential Exchange Service" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-cz-Owd">
-                                <rect key="frame" x="0.0" y="431.5" width="414" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwE-Yd-mZD">
-                                <rect key="frame" x="40" y="475" width="334" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8k-MR-g2y">
+                                <rect key="frame" x="20" y="480" width="374" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="VLl-AY-6SK"/>
+                                    <constraint firstAttribute="height" constant="44" id="YvA-Uc-3fC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mb-1p-e00">
-                                <rect key="frame" x="80.5" y="535" width="253" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Exchange Token for AWS Credentials"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <action selector="exchangeTokenForAwsCredentialButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t0n-hX-cSV"/>
+                                    <segue destination="aqN-nR-uyp" kind="show" id="80Z-RN-fHY"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kwE-Yd-mZD" secondAttribute="trailing" constant="40" id="9fL-ZK-Rdw"/>
-                            <constraint firstItem="kwE-Yd-mZD" firstAttribute="top" secondItem="r2l-cz-Owd" secondAttribute="bottom" constant="10" id="BOM-jQ-SBr"/>
-                            <constraint firstItem="AYa-Sb-A6O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cm8-hN-YLc"/>
-                            <constraint firstItem="3Mb-1p-e00" firstAttribute="top" secondItem="kwE-Yd-mZD" secondAttribute="bottom" constant="10" id="FwI-QB-M0c"/>
-                            <constraint firstItem="H6A-u8-gl3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H6b-Hw-JGE"/>
-                            <constraint firstItem="AYa-Sb-A6O" firstAttribute="bottom" secondItem="r2l-cz-Owd" secondAttribute="top" constant="-30" id="OWv-ef-g6f"/>
-                            <constraint firstItem="d4G-zS-9aM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RvQ-LR-bUn"/>
-                            <constraint firstAttribute="trailing" secondItem="r2l-cz-Owd" secondAttribute="trailing" id="SJ9-aB-GTs"/>
-                            <constraint firstItem="r2l-cz-Owd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wb4-Vh-85l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w8k-MR-g2y" secondAttribute="trailing" constant="20" id="7za-jQ-M2p"/>
+                            <constraint firstItem="w8k-MR-g2y" firstAttribute="top" secondItem="AYa-Sb-A6O" secondAttribute="bottom" constant="62.5" id="Ca7-qJ-p10"/>
+                            <constraint firstItem="w8k-MR-g2y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="M6o-ck-9Yz"/>
+                            <constraint firstItem="AYa-Sb-A6O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QMQ-0w-lOe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AYa-Sb-A6O" secondAttribute="trailing" constant="27" id="X9u-9o-7ZG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x9z-kF-irE" secondAttribute="trailing" constant="27" id="ZIi-WT-XJa"/>
                             <constraint firstItem="x9z-kF-irE" firstAttribute="bottom" secondItem="AYa-Sb-A6O" secondAttribute="top" constant="-30" id="bFD-9O-bzT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Mb-1p-e00" secondAttribute="trailing" id="eIt-tc-6DY"/>
-                            <constraint firstItem="r2l-cz-Owd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f6W-aP-MJD"/>
-                            <constraint firstItem="r2l-cz-Owd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fre-Fu-LJs"/>
                             <constraint firstItem="d4G-zS-9aM" firstAttribute="bottom" secondItem="x9z-kF-irE" secondAttribute="top" constant="-20" id="ij4-bw-DsP"/>
-                            <constraint firstItem="H6A-u8-gl3" firstAttribute="bottom" secondItem="d4G-zS-9aM" secondAttribute="top" constant="-40" id="jwW-cC-cDe"/>
-                            <constraint firstItem="3Mb-1p-e00" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qdH-f7-M8C"/>
-                            <constraint firstItem="x9z-kF-irE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wVX-fQ-9A7"/>
-                            <constraint firstItem="3Mb-1p-e00" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xvY-EY-Kkj"/>
-                            <constraint firstItem="kwE-Yd-mZD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="yox-6o-HyZ"/>
+                            <constraint firstItem="d4G-zS-9aM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="k5J-mi-lAx"/>
+                            <constraint firstItem="x9z-kF-irE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="lF1-1J-f85"/>
+                            <constraint firstItem="d4G-zS-9aM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="143.5" id="lfm-bf-gId"/>
+                            <constraint firstItem="d4G-zS-9aM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-27" id="vGJ-og-LDs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Amazon Chime SDK Messaging Demo" id="RUE-cX-Oep"/>
+                    <navigationItem key="navigationItem" id="RUE-cX-Oep"/>
                     <connections>
-                        <outlet property="identityTokenTextField" destination="kwE-Yd-mZD" id="nUz-2x-LOU"/>
                         <outlet property="passwordTextField" destination="x9z-kF-irE" id="LLh-kL-gRV"/>
                         <outlet property="usernameTextField" destination="d4G-zS-9aM" id="Rii-vd-zfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-126.08695652173914" y="138.61607142857142"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="Z1X-P8-xl1">
+            <objects>
+                <viewController id="aqN-nR-uyp" customClass="SignUpViewController" customModule="Motcha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aCo-aG-pqn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WzH-XC-kW0">
+                                <rect key="frame" x="20" y="102" width="374" height="256"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKk-EY-yo0">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="dIm-Uy-SMv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3k0-2l-O6b">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="3lo-8b-piY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkQ-3S-Vp9">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="20A-Yq-BBf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUU-2P-j6l">
+                                        <rect key="frame" x="0.0" y="210" width="374" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="vuu-6d-d59"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpAction:forEvent:" destination="aqN-nR-uyp" eventType="touchUpInside" id="Qv3-ub-ucl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D4x-gU-1TU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WzH-XC-kW0" firstAttribute="leading" secondItem="D4x-gU-1TU" secondAttribute="leading" constant="20" id="IBr-4E-EZE"/>
+                            <constraint firstItem="WzH-XC-kW0" firstAttribute="top" secondItem="D4x-gU-1TU" secondAttribute="top" constant="10" id="J2f-dQ-VSQ"/>
+                            <constraint firstItem="D4x-gU-1TU" firstAttribute="trailing" secondItem="WzH-XC-kW0" secondAttribute="trailing" constant="20" id="R4T-rv-AaM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uTT-UN-cHo"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="aKk-EY-yo0" id="xVu-K4-YW8"/>
+                        <outlet property="fullNameTextField" destination="fkQ-3S-Vp9" id="eMP-WS-nbF"/>
+                        <outlet property="passwordTextField" destination="3k0-2l-O6b" id="9c8-dy-A3X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQK-ol-kdd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724.63768115942037" y="138.61607142857142"/>
         </scene>
         <!--Chat-->
         <scene sceneID="Kna-nd-Gjk">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" hidesBottomBarWhenPushed="YES" id="U8X-DO-oet" customClass="ChatViewController" customModule="AmazonChimeSDKMessagingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" hidesBottomBarWhenPushed="YES" id="U8X-DO-oet" customClass="ChatViewController" customModule="Motcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hz6-JK-GVh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6Z-I4-iRA" userLabel="Chat View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ui-xj-Dpm" userLabel="InputBox">
-                                        <rect key="frame" x="0.0" y="713" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="709" width="414" height="60"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xJa-Wo-1NT">
                                                 <rect key="frame" x="8" y="0.0" width="284" height="40"/>
@@ -202,11 +245,11 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WDm-uS-r5X">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="704"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMessageCell" id="zDQ-0g-XPP" customClass="ChatMessageTableViewCell" customModule="AmazonChimeSDKMessagingDemo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.5" width="414" height="82.5"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMessageCell" id="zDQ-0g-XPP" customClass="ChatMessageTableViewCell" customModule="Motcha" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="414" height="82.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zDQ-0g-XPP" id="UvZ-GP-OAq">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="82.5"/>
@@ -332,13 +375,13 @@
         <!--Notification Settings View Controller-->
         <scene sceneID="FLR-Tm-wAa">
             <objects>
-                <viewController id="ERy-hA-eAm" customClass="NotificationSettingsViewController" customModule="AmazonChimeSDKMessagingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ERy-hA-eAm" customClass="NotificationSettingsViewController" customModule="Motcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WIJ-qM-bjK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsC-6i-YcW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="dSR-WV-4Yb">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2xh-YP-nud">
@@ -355,14 +398,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5MC-Xt-q7u">
-                                <rect key="frame" x="20" y="123" width="374" height="180"/>
+                                <rect key="frame" x="20" y="127" width="374" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="M8q-1K-kcw"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="NotificationLevelCell" textLabel="G5L-3h-1SM" detailTextLabel="aFF-ot-mYZ" style="IBUITableViewCellStyleSubtitle" id="kSb-WK-20q">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="374" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kSb-WK-20q" id="wJg-b3-5oW">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
@@ -388,7 +431,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgY-5U-10Q">
-                                <rect key="frame" x="0.0" y="93" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Notification Settings Title"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KFK-S8-1sm"/>
@@ -423,17 +466,17 @@
         <!--Channels-->
         <scene sceneID="WZt-Pm-Uyq">
             <objects>
-                <tableViewController id="Qcc-38-6fJ" customClass="ChannelTableViewController" customModule="AmazonChimeSDKMessagingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Qcc-38-6fJ" customClass="ChannelTableViewController" customModule="Motcha" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WRv-NQ-7Xq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChannelCell" id="2mi-41-enc">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2mi-41-enc" id="ovH-ZB-a54">
-                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -455,13 +498,13 @@
         <!--Settings-->
         <scene sceneID="aRc-u1-cFr">
             <objects>
-                <viewController id="jNe-M2-Zhb" customClass="SettingsViewController" customModule="AmazonChimeSDKMessagingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jNe-M2-Zhb" customClass="SettingsViewController" customModule="Motcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ik9-cY-8On">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login as" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJk-Ox-PUU">
-                                <rect key="frame" x="0.0" y="84" width="414" height="20.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -475,7 +518,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v2w-PI-CTe">
-                                <rect key="frame" x="20" y="134.5" width="374" height="31"/>
+                                <rect key="frame" x="20" y="138.5" width="374" height="31"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UB3-oQ-zLF">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
@@ -546,7 +589,7 @@
                 <navigationController storyboardIdentifier="SigninNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="DdC-KX-pHA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jAb-Fa-Mqt">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -556,7 +599,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYv-yc-MQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-893" y="139"/>
         </scene>
         <!--Chat-->
         <scene sceneID="ST5-5C-gqa">
@@ -565,7 +608,7 @@
                     <tabBarItem key="tabBarItem" title="Chat" image="message.fill" catalog="system" id="Rln-bE-kaa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NsT-sV-4c1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -579,10 +622,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="delete.left" catalog="system" width="128" height="104"/>
+        <image name="delete.left" catalog="system" width="128" height="102"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
-        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="paperclip" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

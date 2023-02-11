@@ -12,7 +12,7 @@ class SignInViewController: UIViewController {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var identityTokenTextField: UITextField!
+    //@IBOutlet var identityTokenTextField: UITextField!
     
     private let TAG = "SignInViewController"
     
@@ -25,25 +25,25 @@ class SignInViewController: UIViewController {
         setupHideKeyboardOnTap()
         AuthService.signOut(signedOutHandler: nil)
         
-        identityTokenTextField.text = "{\n  defaultsTo: 'anonymousAccess',\n}\n"
+        //identityTokenTextField.text = "{\n  defaultsTo: 'anonymousAccess',\n}\n"
     }
 
-    @IBAction func exchangeTokenForAwsCredentialButtonPressed(_ sender: UIButton) {
-        
-        guard let accessToken = identityTokenTextField.text else {
-            print("\(TAG) accessToken is nil")
-            return
-        }
-        AuthService.exchangeTokenForAwsCredential(accessToken: accessToken) { success in
-            if success {
-                DispatchQueue.main.async {
-                    self.didSignInSucceed(username: "anonymous")
-                }
-            } else {
-                print("\(self.TAG) AuthService.exchangeTokenForAwsCredential failed")
-            }
-        }
-    }
+//    @IBAction func exchangeTokenForAwsCredentialButtonPressed(_ sender: UIButton) {
+//        
+//        guard let accessToken = identityTokenTextField.text else {
+//            print("\(TAG) accessToken is nil")
+//            return
+//        }
+//        AuthService.exchangeTokenForAwsCredential(accessToken: accessToken) { success in
+//            if success {
+//                DispatchQueue.main.async {
+//                    self.didSignInSucceed(username: "anonymous")
+//                }
+//            } else {
+//                print("\(self.TAG) AuthService.exchangeTokenForAwsCredential failed")
+//            }
+//        }
+//    }
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
         view.endEditing(true)
@@ -55,7 +55,8 @@ class SignInViewController: UIViewController {
             return
         }
 
-        AuthService.signIn(username: username, password: password) {
+        
+        AuthService.signUp(username: username, password: password, options: "test") {
             success in
             if success {
                 DispatchQueue.main.async {
@@ -65,6 +66,17 @@ class SignInViewController: UIViewController {
                 print("\(self.TAG) sign in failed")
             }
         }
+        
+//        AuthService.signIn(username: username, password: password) {
+//            success in
+//            if success {
+//                DispatchQueue.main.async {
+//                    self.didSignInSucceed(username: username)
+//                }
+//            } else {
+//                print("\(self.TAG) sign in failed")
+//            }
+//        }
     }
 
     private func didSignInSucceed(username: String) {

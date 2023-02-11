@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5207217DE567814FEBCAE345 /* Pods_Motcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C631C25AFA787274D635E8 /* Pods_Motcha.framework */; };
+		B3E59F772997822B002A5862 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F762997822B002A5862 /* SignUpViewController.swift */; };
 		ED0301542702E441005FE28F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0301532702E441005FE28F /* SettingsViewController.swift */; };
 		ED03015D27039979005FE28F /* ChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03015C27039979005FE28F /* ChannelTableViewController.swift */; };
 		ED03017C27063FA9005FE28F /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		35290E018C0928AB6C1E6A77 /* Pods-Motcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.release.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.release.xcconfig"; sourceTree = "<group>"; };
 		B0182FE31C0B9504E1BBF79A /* Pods-Motcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.debug.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.debug.xcconfig"; sourceTree = "<group>"; };
+		B3E59F762997822B002A5862 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ED0301532702E441005FE28F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED03015C27039979005FE28F /* ChannelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewController.swift; sourceTree = "<group>"; };
 		ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				ED0301532702E441005FE28F /* SettingsViewController.swift */,
 				ED7CAEAB264C4CD500F45DD8 /* ChatViewController.swift */,
 				ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */,
+				B3E59F762997822B002A5862 /* SignUpViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				EDEBEF7D265C47C800B567C7 /* WebSocketAdapter.swift in Sources */,
 				EDEBEF87265C642700B567C7 /* ObserverUtils.swift in Sources */,
 				EDB3BFE02655D03800CE699A /* DefaultSigV4.swift in Sources */,
+				B3E59F772997822B002A5862 /* SignUpViewController.swift in Sources */,
 				EDB3C01A265C26B800CE699A /* SigV4.swift in Sources */,
 				EDB3BFDA2655904200CE699A /* MessagingSessionStatus.swift in Sources */,
 				EDB3BFDD2655916800CE699A /* Message.swift in Sources */,
