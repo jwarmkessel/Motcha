@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5207217DE567814FEBCAE345 /* Pods_Motcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C631C25AFA787274D635E8 /* Pods_Motcha.framework */; };
 		B3E59F772997822B002A5862 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F762997822B002A5862 /* SignUpViewController.swift */; };
+		B3E59F7A299870BD002A5862 /* OpenInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */; };
+		B3E59F7B299870BD002A5862 /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F79299870BD002A5862 /* SheetController.swift */; };
 		ED0301542702E441005FE28F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0301532702E441005FE28F /* SettingsViewController.swift */; };
 		ED03015D27039979005FE28F /* ChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03015C27039979005FE28F /* ChannelTableViewController.swift */; };
 		ED03017C27063FA9005FE28F /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */; };
@@ -58,6 +60,8 @@
 		35290E018C0928AB6C1E6A77 /* Pods-Motcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.release.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.release.xcconfig"; sourceTree = "<group>"; };
 		B0182FE31C0B9504E1BBF79A /* Pods-Motcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.debug.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.debug.xcconfig"; sourceTree = "<group>"; };
 		B3E59F762997822B002A5862 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInviteViewController.swift; sourceTree = "<group>"; };
+		B3E59F79299870BD002A5862 /* SheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
 		ED0301532702E441005FE28F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED03015C27039979005FE28F /* ChannelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewController.swift; sourceTree = "<group>"; };
 		ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				ED7CAEAB264C4CD500F45DD8 /* ChatViewController.swift */,
 				ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */,
 				B3E59F762997822B002A5862 /* SignUpViewController.swift */,
+				B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */,
+				B3E59F79299870BD002A5862 /* SheetController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -431,8 +437,10 @@
 				EDB3C01A265C26B800CE699A /* SigV4.swift in Sources */,
 				EDB3BFDA2655904200CE699A /* MessagingSessionStatus.swift in Sources */,
 				EDB3BFDD2655916800CE699A /* Message.swift in Sources */,
+				B3E59F7A299870BD002A5862 /* OpenInviteViewController.swift in Sources */,
 				ED3B8D9E264CD44B00E662F2 /* ChatMessageTableViewCell.swift in Sources */,
 				EDB3BFCA26557B2700CE699A /* MessagingSessionConfiguration.swift in Sources */,
+				B3E59F7B299870BD002A5862 /* SheetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMBFCQ6T88;
 				INFOPLIST_FILE = Motcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,7 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMBFCQ6T88;
 				INFOPLIST_FILE = Motcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
