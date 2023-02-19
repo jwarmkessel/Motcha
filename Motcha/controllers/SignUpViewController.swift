@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, CLLocationManagerDelegate {
     
     private let TAG = "SignUpViewController"
+    
+    var locationManager: CLLocationManager?
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -40,6 +43,16 @@ class SignUpViewController: UIViewController {
                 print("\(self.TAG) sign in failed")
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestAlwaysAuthorization()
+
+        view.backgroundColor = .gray
     }
     
     private func didSignInSucceed(username: String) {

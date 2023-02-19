@@ -11,6 +11,7 @@
 		B3E59F772997822B002A5862 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F762997822B002A5862 /* SignUpViewController.swift */; };
 		B3E59F7A299870BD002A5862 /* OpenInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */; };
 		B3E59F7B299870BD002A5862 /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F79299870BD002A5862 /* SheetController.swift */; };
+		B3E59F7D29988D56002A5862 /* CreateOpenInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F7C29988D56002A5862 /* CreateOpenInviteCell.swift */; };
 		ED0301542702E441005FE28F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0301532702E441005FE28F /* SettingsViewController.swift */; };
 		ED03015D27039979005FE28F /* ChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03015C27039979005FE28F /* ChannelTableViewController.swift */; };
 		ED03017C27063FA9005FE28F /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */; };
@@ -62,6 +63,7 @@
 		B3E59F762997822B002A5862 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInviteViewController.swift; sourceTree = "<group>"; };
 		B3E59F79299870BD002A5862 /* SheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
+		B3E59F7C29988D56002A5862 /* CreateOpenInviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOpenInviteCell.swift; sourceTree = "<group>"; };
 		ED0301532702E441005FE28F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED03015C27039979005FE28F /* ChannelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewController.swift; sourceTree = "<group>"; };
 		ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -139,17 +141,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B308277729A1F6B200420EE9 /* OpenInvite */ = {
+			isa = PBXGroup;
+			children = (
+				B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */,
+				B3E59F79299870BD002A5862 /* SheetController.swift */,
+				B3E59F7C29988D56002A5862 /* CreateOpenInviteCell.swift */,
+			);
+			path = OpenInvite;
+			sourceTree = "<group>";
+		};
 		ED03015F2703A70A005FE28F /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B308277729A1F6B200420EE9 /* OpenInvite */,
 				ED37EC6E26422A14005272D9 /* SignInViewController.swift */,
 				ED03015C27039979005FE28F /* ChannelTableViewController.swift */,
 				ED0301532702E441005FE28F /* SettingsViewController.swift */,
 				ED7CAEAB264C4CD500F45DD8 /* ChatViewController.swift */,
 				ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */,
 				B3E59F762997822B002A5862 /* SignUpViewController.swift */,
-				B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */,
-				B3E59F79299870BD002A5862 /* SheetController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -416,6 +427,7 @@
 				ED37ECAE264A2F24005272D9 /* Extensions.swift in Sources */,
 				ED33A2F326544160000621B5 /* AppConfiguration.swift in Sources */,
 				EDD3DA93270E275A00052713 /* SettingsModel.swift in Sources */,
+				B3E59F7D29988D56002A5862 /* CreateOpenInviteCell.swift in Sources */,
 				EDD3DA8B270CFBAE00052713 /* AWSChimeSDKIdentityService.swift in Sources */,
 				EDEBEF79265C420C00B567C7 /* MessagingSession.swift in Sources */,
 				ED3B8DB9264DAE6600E662F2 /* AuthService.swift in Sources */,
@@ -594,7 +606,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMBFCQ6T88;
 				INFOPLIST_FILE = Motcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,7 +633,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMBFCQ6T88;
 				INFOPLIST_FILE = Motcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
