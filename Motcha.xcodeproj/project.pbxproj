@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5207217DE567814FEBCAE345 /* Pods_Motcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C631C25AFA787274D635E8 /* Pods_Motcha.framework */; };
+		B308277929A22F8700420EE9 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277829A22F8700420EE9 /* MapPin.swift */; };
 		B3E59F772997822B002A5862 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F762997822B002A5862 /* SignUpViewController.swift */; };
 		B3E59F7A299870BD002A5862 /* OpenInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */; };
 		B3E59F7B299870BD002A5862 /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F79299870BD002A5862 /* SheetController.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		35290E018C0928AB6C1E6A77 /* Pods-Motcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.release.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.release.xcconfig"; sourceTree = "<group>"; };
 		B0182FE31C0B9504E1BBF79A /* Pods-Motcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.debug.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.debug.xcconfig"; sourceTree = "<group>"; };
+		B308277829A22F8700420EE9 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		B3E59F762997822B002A5862 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInviteViewController.swift; sourceTree = "<group>"; };
 		B3E59F79299870BD002A5862 /* SheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */,
+				B308277829A22F8700420EE9 /* MapPin.swift */,
 				B3E59F79299870BD002A5862 /* SheetController.swift */,
 				B3E59F7C29988D56002A5862 /* CreateOpenInviteCell.swift */,
 			);
@@ -422,6 +425,7 @@
 				ED37ECB4264A5577005272D9 /* ChatModel.swift in Sources */,
 				EDEBEF81265C498100B567C7 /* WebSocketAdapterObserver.swift in Sources */,
 				ED37EC6B26422A14005272D9 /* AppDelegate.swift in Sources */,
+				B308277929A22F8700420EE9 /* MapPin.swift in Sources */,
 				ED03017C27063FA9005FE28F /* NotificationSettingsViewController.swift in Sources */,
 				ED030182270686B5005FE28F /* NotificationLevel.swift in Sources */,
 				ED37ECAE264A2F24005272D9 /* Extensions.swift in Sources */,

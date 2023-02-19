@@ -9,7 +9,9 @@ import UIKit
 import WebKit
 import MapKit
 
-class OpenInviteViewController: UIViewController {
+
+
+class OpenInviteViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
 	
     private let TAG = "OpenInviteViewController"
     
@@ -35,8 +37,32 @@ class OpenInviteViewController: UIViewController {
         setupSheetAction()
         setupMapView()
         zoomToUserLocation()
+        addLongPressGesture()
         
 	}
+    
+    private func addLongPressGesture() {
+        let lpgr = UILongPressGestureRecognizer(target: self,
+                             action:#selector(self.handleLongPress))
+        lpgr.minimumPressDuration = 1
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        self.mapView.addGestureRecognizer(lpgr)
+    }
+    
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state != UIGestureRecognizer.State.ended {
+            return
+        }
+        else if gestureRecognizer.state != UIGestureRecognizer.State.began {
+            
+            let touchPoint = gestureRecognizer.location(in: self.mapView)
+            
+            let touchMapCoordinate =  self.mapView.convert(touchPoint, toCoordinateFrom: mapView)
+            let annot = MapPin(coordinate: touchMapCoordinate, title: "Hello", subtitle: "World")
+            self.mapView.addAnnotation(annot)
+        }
+    }
     
     private func zoomToUserLocation() {        
 
@@ -98,9 +124,7 @@ class OpenInviteViewController: UIViewController {
     }
 }
 
-extension OpenInviteViewController: MKMapViewDelegate {
-    
-}
+
 
 extension OpenInviteViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
