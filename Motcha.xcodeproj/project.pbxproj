@@ -8,7 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5207217DE567814FEBCAE345 /* Pods_Motcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C631C25AFA787274D635E8 /* Pods_Motcha.framework */; };
+		B308277929A22F8700420EE9 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277829A22F8700420EE9 /* MapPin.swift */; };
+		B308277B29A2BCF400420EE9 /* OpenInviteSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277A29A2BCF400420EE9 /* OpenInviteSessionCell.swift */; };
+		B308277E29A2FC8300420EE9 /* TimeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277D29A2FC8300420EE9 /* TimeEntryView.swift */; };
+		B308278029A5E18A00420EE9 /* SheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277F29A5E18A00420EE9 /* SheetViewModel.swift */; };
+		B308278229A65F6000420EE9 /* ConfirmLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308278129A65F6000420EE9 /* ConfirmLocationCell.swift */; };
 		B3E59F772997822B002A5862 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F762997822B002A5862 /* SignUpViewController.swift */; };
+		B3E59F7A299870BD002A5862 /* OpenInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */; };
+		B3E59F7B299870BD002A5862 /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F79299870BD002A5862 /* SheetController.swift */; };
+		B3E59F7D29988D56002A5862 /* CreateOpenInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E59F7C29988D56002A5862 /* CreateOpenInviteCell.swift */; };
 		ED0301542702E441005FE28F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0301532702E441005FE28F /* SettingsViewController.swift */; };
 		ED03015D27039979005FE28F /* ChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03015C27039979005FE28F /* ChannelTableViewController.swift */; };
 		ED03017C27063FA9005FE28F /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */; };
@@ -57,7 +65,15 @@
 /* Begin PBXFileReference section */
 		35290E018C0928AB6C1E6A77 /* Pods-Motcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.release.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.release.xcconfig"; sourceTree = "<group>"; };
 		B0182FE31C0B9504E1BBF79A /* Pods-Motcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.debug.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.debug.xcconfig"; sourceTree = "<group>"; };
+		B308277829A22F8700420EE9 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		B308277A29A2BCF400420EE9 /* OpenInviteSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInviteSessionCell.swift; sourceTree = "<group>"; };
+		B308277D29A2FC8300420EE9 /* TimeEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryView.swift; sourceTree = "<group>"; };
+		B308277F29A5E18A00420EE9 /* SheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewModel.swift; sourceTree = "<group>"; };
+		B308278129A65F6000420EE9 /* ConfirmLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationCell.swift; sourceTree = "<group>"; };
 		B3E59F762997822B002A5862 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInviteViewController.swift; sourceTree = "<group>"; };
+		B3E59F79299870BD002A5862 /* SheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
+		B3E59F7C29988D56002A5862 /* CreateOpenInviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOpenInviteCell.swift; sourceTree = "<group>"; };
 		ED0301532702E441005FE28F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED03015C27039979005FE28F /* ChannelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewController.swift; sourceTree = "<group>"; };
 		ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -135,15 +151,71 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		ED03015F2703A70A005FE28F /* controllers */ = {
+		B308277729A1F6B200420EE9 /* OpenInvite */ = {
+			isa = PBXGroup;
+			children = (
+				B3E59F78299870BD002A5862 /* OpenInviteViewController.swift */,
+				B308277829A22F8700420EE9 /* MapPin.swift */,
+				B3E59F79299870BD002A5862 /* SheetController.swift */,
+				B3E59F7C29988D56002A5862 /* CreateOpenInviteCell.swift */,
+				B308277A29A2BCF400420EE9 /* OpenInviteSessionCell.swift */,
+				B308277F29A5E18A00420EE9 /* SheetViewModel.swift */,
+				B308278129A65F6000420EE9 /* ConfirmLocationCell.swift */,
+			);
+			path = OpenInvite;
+			sourceTree = "<group>";
+		};
+		B308277C29A2FC6A00420EE9 /* SharedViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B308277D29A2FC8300420EE9 /* TimeEntryView.swift */,
+			);
+			path = SharedViewComponents;
+			sourceTree = "<group>";
+		};
+		B308278329A897D900420EE9 /* LoginAndRegistration */ = {
 			isa = PBXGroup;
 			children = (
 				ED37EC6E26422A14005272D9 /* SignInViewController.swift */,
-				ED03015C27039979005FE28F /* ChannelTableViewController.swift */,
-				ED0301532702E441005FE28F /* SettingsViewController.swift */,
-				ED7CAEAB264C4CD500F45DD8 /* ChatViewController.swift */,
-				ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */,
 				B3E59F762997822B002A5862 /* SignUpViewController.swift */,
+			);
+			path = LoginAndRegistration;
+			sourceTree = "<group>";
+		};
+		B308278429A897F200420EE9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ED0301532702E441005FE28F /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B308278529A8980300420EE9 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				ED03015C27039979005FE28F /* ChannelTableViewController.swift */,
+				ED7CAEAB264C4CD500F45DD8 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		B308278629A8981B00420EE9 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				ED03017B27063FA9005FE28F /* NotificationSettingsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		ED03015F2703A70A005FE28F /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B308278629A8981B00420EE9 /* Notifications */,
+				B308278529A8980300420EE9 /* Chat */,
+				B308278429A897F200420EE9 /* Settings */,
+				B308278329A897D900420EE9 /* LoginAndRegistration */,
+				B308277C29A2FC6A00420EE9 /* SharedViewComponents */,
+				B308277729A1F6B200420EE9 /* OpenInvite */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -395,6 +467,7 @@
 			files = (
 				EDB3BFC02654A53500CE699A /* User.swift in Sources */,
 				ED3B8DA5264CD64200E662F2 /* ChatMessage.swift in Sources */,
+				B308278029A5E18A00420EE9 /* SheetViewModel.swift in Sources */,
 				ED0301542702E441005FE28F /* SettingsViewController.swift in Sources */,
 				ED37EC6F26422A14005272D9 /* SignInViewController.swift in Sources */,
 				ED251DFB26D5A625009AC316 /* HttpUtils.swift in Sources */,
@@ -403,19 +476,24 @@
 				ED03017F27067451005FE28F /* NotificationSettingsModel.swift in Sources */,
 				EDC8A50826D054CB006894E3 /* Constants.swift in Sources */,
 				ED37ECB4264A5577005272D9 /* ChatModel.swift in Sources */,
+				B308278229A65F6000420EE9 /* ConfirmLocationCell.swift in Sources */,
 				EDEBEF81265C498100B567C7 /* WebSocketAdapterObserver.swift in Sources */,
 				ED37EC6B26422A14005272D9 /* AppDelegate.swift in Sources */,
+				B308277929A22F8700420EE9 /* MapPin.swift in Sources */,
 				ED03017C27063FA9005FE28F /* NotificationSettingsViewController.swift in Sources */,
 				ED030182270686B5005FE28F /* NotificationLevel.swift in Sources */,
 				ED37ECAE264A2F24005272D9 /* Extensions.swift in Sources */,
 				ED33A2F326544160000621B5 /* AppConfiguration.swift in Sources */,
 				EDD3DA93270E275A00052713 /* SettingsModel.swift in Sources */,
+				B3E59F7D29988D56002A5862 /* CreateOpenInviteCell.swift in Sources */,
 				EDD3DA8B270CFBAE00052713 /* AWSChimeSDKIdentityService.swift in Sources */,
 				EDEBEF79265C420C00B567C7 /* MessagingSession.swift in Sources */,
 				ED3B8DB9264DAE6600E662F2 /* AuthService.swift in Sources */,
 				EDB3BFC5265578C000CE699A /* ChimeUserCredentials.swift in Sources */,
 				ED37EC6D26422A14005272D9 /* SceneDelegate.swift in Sources */,
+				B308277E29A2FC8300420EE9 /* TimeEntryView.swift in Sources */,
 				ED251DFE26D5C3FF009AC316 /* CredentialExchangeResponse.swift in Sources */,
+				B308277B29A2BCF400420EE9 /* OpenInviteSessionCell.swift in Sources */,
 				ED03015D27039979005FE28F /* ChannelTableViewController.swift in Sources */,
 				ED33A2F626545204000621B5 /* AWSChimeSDKMessagingService.swift in Sources */,
 				EDEBEF84265C4EBF00B567C7 /* DefaultWebSocketAdapter.swift in Sources */,
@@ -431,8 +509,10 @@
 				EDB3C01A265C26B800CE699A /* SigV4.swift in Sources */,
 				EDB3BFDA2655904200CE699A /* MessagingSessionStatus.swift in Sources */,
 				EDB3BFDD2655916800CE699A /* Message.swift in Sources */,
+				B3E59F7A299870BD002A5862 /* OpenInviteViewController.swift in Sources */,
 				ED3B8D9E264CD44B00E662F2 /* ChatMessageTableViewCell.swift in Sources */,
 				EDB3BFCA26557B2700CE699A /* MessagingSessionConfiguration.swift in Sources */,
+				B3E59F7B299870BD002A5862 /* SheetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMBFCQ6T88;
 				INFOPLIST_FILE = Motcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,7 +693,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMBFCQ6T88;
 				INFOPLIST_FILE = Motcha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
