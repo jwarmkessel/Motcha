@@ -14,19 +14,6 @@ class CreateOpenInviteCell: UITableViewCell {
     
     var createOpenInviteHandler: (()->Void)?
     
-    
-    private let vStack: UIStackView = {
-        let view = UIStackView()
-        view.axis = .vertical
-        return view
-    }()
-    
-    private let hStack: UIStackView = {
-        let view = UIStackView()
-        view.axis = .horizontal
-        return view
-    }()
-    
     private let eventNameTextField: UITextField = {
         let view = UITextField()
         view.placeholder = "What do you want to do?"
@@ -41,19 +28,19 @@ class CreateOpenInviteCell: UITableViewCell {
         return view
     }()
     
-    private let startTimeButton: UIButton = {
-        let view = UIButton()
+    private let startTimeButton: TimeEntryView = {
+        let view = TimeEntryView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Start Time", for: .normal)
-        view.setTitleColor(.lightGray, for: .normal)
+        view.label.text = "Start Time"
+        view.label.textAlignment = .center
         return view
     }()
     
-    private let endTimeButton: UIButton = {
-        let view = UIButton()
+    private let endTimeButton: TimeEntryView = {
+        let view = TimeEntryView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("End Time", for: .normal)
-        view.setTitleColor(.lightGray, for: .normal)
+        view.label.text = "End Time"
+        view.label.textAlignment = .center
         return view
     }()
     
@@ -100,20 +87,17 @@ class CreateOpenInviteCell: UITableViewCell {
         let constraints: [NSLayoutConstraint] = [
             eventNameTextField.heightAnchor.constraint(equalToConstant: 60.0),
             locationTextField.heightAnchor.constraint(equalToConstant: 60.0),
-            startTimeButton.heightAnchor.constraint(equalToConstant: 60.0),
-            endTimeButton.heightAnchor.constraint(equalToConstant: 60.0),
-
+            startTimeButton.heightAnchor.constraint(equalToConstant: 120.0),
+            endTimeButton.heightAnchor.constraint(equalToConstant: 120.0),
             
             eventNameTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
             eventNameTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
             eventNameTextField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20.0),
-            
-            
+                        
             locationTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
             locationTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
             locationTextField.topAnchor.constraint(equalTo: eventNameTextField.bottomAnchor),
-            
-            
+                        
             startTimeButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             startTimeButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
             startTimeButton.topAnchor.constraint(equalTo: locationTextField.bottomAnchor),
@@ -122,8 +106,7 @@ class CreateOpenInviteCell: UITableViewCell {
             endTimeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             endTimeButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
             endTimeButton.topAnchor.constraint(equalTo: locationTextField.bottomAnchor),
-            
-            
+                        
             createButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
             createButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
             createButton.topAnchor.constraint(equalTo: startTimeButton.bottomAnchor),

@@ -10,12 +10,18 @@ import WebKit
 import MapKit
 
 
-
 class OpenInviteViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
 	
     private let TAG = "OpenInviteViewController"
     
     private var locationManager: CLLocationManager?
+    
+    private var currentAnnotation: MKAnnotation?
+    
+    private var sheetViewModel: SheetViewModel? = nil
+    
+    private var sheetController: SheetController?
+    
     
     private let mapView = {
         let view = MKMapView()
@@ -23,14 +29,7 @@ class OpenInviteViewController: UIViewController, UIGestureRecognizerDelegate, M
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-	let sheetTransitioningDelegate = SheetTransitioningDelegate()
-	
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
+	    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 				
@@ -38,13 +37,12 @@ class OpenInviteViewController: UIViewController, UIGestureRecognizerDelegate, M
         setupMapView()
         zoomToUserLocation()
         addLongPressGesture()
-        
 	}
     
     private func addLongPressGesture() {
         let lpgr = UILongPressGestureRecognizer(target: self,
                              action:#selector(self.handleLongPress))
-        lpgr.minimumPressDuration = 1
+        lpgr.minimumPressDuration = 1.0
         lpgr.delaysTouchesBegan = true
         lpgr.delegate = self
         self.mapView.addGestureRecognizer(lpgr)
@@ -58,9 +56,21 @@ class OpenInviteViewController: UIViewController, UIGestureRecognizerDelegate, M
             
             let touchPoint = gestureRecognizer.location(in: self.mapView)
             
+            if let annot = currentAnnotation {
+                mapView.removeAnnotation(annot)
+            }
+            
             let touchMapCoordinate =  self.mapView.convert(touchPoint, toCoordinateFrom: mapView)
-            let annot = MapPin(coordinate: touchMapCoordinate, title: "Hello", subtitle: "World")
-            self.mapView.addAnnotation(annot)
+            let newAnnotation = MapPin(coordinate: touchMapCoordinate, title: "Hello", subtitle: "World")
+            self.mapView.addAnnotation(newAnnotation)
+            self.currentAnnotation = newAnnotation
+            
+            self.mapView.setCenter(newAnnotation.coordinate, animated: true)
+            
+            sheetViewModel = SheetViewModel(state: .confirmLocation, coordinates: touchMapCoordinate)
+            
+            guard let model = sheetViewModel else { return }
+            presentSheet(model: model)
         }
     }
     
@@ -100,13 +110,36 @@ class OpenInviteViewController: UIViewController, UIGestureRecognizerDelegate, M
     private func setupSheetAction() {
                 
         let action = UIAction { [weak self] _ in
-            let controller = SheetController()
-            controller.transitioningDelegate = self?.sheetTransitioningDelegate
-            controller.modalPresentationStyle = .custom
-            self?.present(controller, animated: true)
+//            self?.presentSheet()
         }
         
         navigationItem.rightBarButtonItem = .init(systemItem: .add, primaryAction: action, menu: nil)
+    }
+    
+    private func presentSheet(model: SheetViewModel) {
+        self.sheetController = SheetController(viewModel: model) { state in
+            switch state {
+            case .confirmLocation:
+                model.state = .createOpenInvite
+            case .createOpenInvite:
+                model.state = .inSession
+            case .inSession:
+                model.state = .confirmLocation
+            }
+            
+            guard let controller = self.sheetController else { return }
+            controller.viewModel = model
+            controller.transitioningDelegate = self
+            controller.modalPresentationStyle = .custom
+            self.present(controller, animated: true)
+        }
+        
+        guard let controller = sheetController else { return }
+        
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .custom
+        self.present(controller, animated: true)
+        
     }
     
     private func setupMapView() {
@@ -124,8 +157,6 @@ class OpenInviteViewController: UIViewController, UIGestureRecognizerDelegate, M
     }
 }
 
-
-
 extension OpenInviteViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways {
@@ -136,5 +167,29 @@ extension OpenInviteViewController: CLLocationManagerDelegate {
                 }
             }
         }
+    }
+}
+
+extension OpenInviteViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController?,
+        source: UIViewController
+    ) -> UIPresentationController? {
+        let controller = UISheetPresentationController(presentedViewController: presented, presenting: presenting)
+        controller.prefersScrollingExpandsWhenScrolledToEdge = true
+        
+        let newDetente = UISheetPresentationController.Detent.custom { context in
+            guard let state = self.sheetViewModel?.state else {
+                return 0.0
+            }
+            print("Justin \(OpenInviteState.sheetHeight(state)())")
+            return OpenInviteState.sheetHeight(state)()
+        }
+        
+        controller.detents = [newDetente]
+        controller.prefersGrabberVisible = true
+        
+        return controller
     }
 }

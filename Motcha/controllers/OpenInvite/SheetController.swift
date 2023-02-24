@@ -11,12 +11,20 @@ class SheetController: UITableViewController {
 	
     private let TAG = "SheetController"
     
-	lazy var numberFormatter: NumberFormatter = {
-		let formatter = NumberFormatter()
-		formatter.numberStyle = .spellOut
-		return formatter
-	}()
-	
+    var sheetHandler: ((_ state: OpenInviteState)->Void)?
+        
+    var viewModel: SheetViewModel?
+    
+    init(viewModel : SheetViewModel, handler: ((_ state: OpenInviteState)->Void)?) {
+        super.init(nibName: nil, bundle: nil)
+        self.sheetHandler = handler
+        self.viewModel = viewModel
+        }
+        
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -45,33 +53,65 @@ class SheetController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CreateOpenInviteCell(style: .default, reuseIdentifier: "createOpenInviteCell") {
-            self.dismiss(animated: true)
+        
+        guard let model = viewModel else { return UITableViewCell() }
+        
+        var cell = UITableViewCell()
+        
+        switch model.state {
+        case .confirmLocation:
+            cell = ConfirmLocationCell(style: .default, reuseIdentifier: "confirmLocationCell") {
+                self.dismiss(animated: true)
+                
+                guard let handler = self.sheetHandler else {
+                    return
+                }
+                
+                handler(model.state)
+                tableView.reloadData()
+            }
+        case .createOpenInvite:
+            cell = CreateOpenInviteCell(style: .default, reuseIdentifier: "createOpenInviteCell") {
+                self.dismiss(animated: true)
+                
+                guard let handler = self.sheetHandler else {
+                    return
+                }
+                
+                handler(model.state)
+                tableView.reloadData()
+            }
+        case .inSession:
+            cell = OpenInviteSessionCell(style: .default, reuseIdentifier: "openInviteSessionCell") {
+                self.dismiss(animated: true)
+                tableView.reloadData()
+            }
         }
+        
 		return cell
 	}
 }
 
-final class SheetTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
-
-	func presentationController(
-		forPresented presented: UIViewController,
-		presenting: UIViewController?,
-		source: UIViewController
-	) -> UIPresentationController? {
-		let controller = UISheetPresentationController(presentedViewController: presented, presenting: presenting)
-		controller.prefersScrollingExpandsWhenScrolledToEdge = true
-        
-        let newDetente = UISheetPresentationController.Detent.custom { context in
-            return 234
-        }
-        
-		controller.detents = [newDetente]
-		controller.prefersGrabberVisible = true
-        
-		return controller
-	}
-}
+//final class SheetTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
+//
+//	func presentationController(
+//		forPresented presented: UIViewController,
+//		presenting: UIViewController?,
+//		source: UIViewController
+//	) -> UIPresentationController? {
+//		let controller = UISheetPresentationController(presentedViewController: presented, presenting: presenting)
+//		controller.prefersScrollingExpandsWhenScrolledToEdge = true
+//        
+//        let newDetente = UISheetPresentationController.Detent.custom { context in
+//            return 294
+//        }
+//        
+//		controller.detents = [newDetente]
+//		controller.prefersGrabberVisible = true
+//        
+//		return controller
+//	}
+//}
 
 extension SheetController {
     
