@@ -56,18 +56,7 @@ class SignInViewController: UIViewController {
         }
 
         
-        AuthService.signUp(username: username, password: password, options: "test") {
-            success in
-            if success {
-                DispatchQueue.main.async {
-                    self.didSignInSucceed(username: username)
-                }
-            } else {
-                print("\(self.TAG) sign in failed")
-            }
-        }
-        
-//        AuthService.signIn(username: username, password: password) {
+//        AuthService.signUp(username: username, password: password, options: "test") {
 //            success in
 //            if success {
 //                DispatchQueue.main.async {
@@ -77,6 +66,17 @@ class SignInViewController: UIViewController {
 //                print("\(self.TAG) sign in failed")
 //            }
 //        }
+        
+        AuthService.signIn(username: username, password: password) {
+            success in
+            if success {
+                DispatchQueue.main.async {
+                    self.didSignInSucceed(username: username)
+                }
+            } else {
+                print("\(self.TAG) sign in failed")
+            }
+        }
     }
 
     private func didSignInSucceed(username: String) {
