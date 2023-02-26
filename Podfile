@@ -5,7 +5,7 @@ target 'Motcha' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for AmazonChimeSDKMessagingDemo
+  # Pods for MotchaApp
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSS3StoragePlugin'
   pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
