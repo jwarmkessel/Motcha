@@ -11,6 +11,10 @@ import Amplify
 import AmplifyPlugins
 import UserNotifications
 
+enum AmplifyConfigError: Error {
+    case invalidConfig
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var deviceToken: String?
@@ -19,7 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             try Amplify.add(plugin: AWSCognitoAuthPlugin())
             try Amplify.add(plugin: AWSS3StoragePlugin())
-            try Amplify.configure()
+            
+            let config = Bundle.main.object(forInfoDictionaryKey: "Config") as! String            
+            // Default production amplify configuration.
+            guard let configurationFile = config == "Staging" ?
+                    Bundle.main.url(forResource: "dev-amplifyconfiguration", withExtension: ".json") :
+                    Bundle.main.url(forResource: "amplifyconfiguration", withExtension: ".json") else {
+                throw AmplifyConfigError.invalidConfig
+            }
+            let configuration = try AmplifyConfiguration(configurationFile: configurationFile)
+            try Amplify.configure(configuration)
         } catch {
             print("An error occurred setting up Amplify: \(error)")
         }

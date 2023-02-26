@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5207217DE567814FEBCAE345 /* Pods_Motcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C631C25AFA787274D635E8 /* Pods_Motcha.framework */; };
+		6C8E503729AAB0AD00E814AE /* dev-amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C8E503629AAB0AD00E814AE /* dev-amplifyconfiguration.json */; };
 		B308277929A22F8700420EE9 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277829A22F8700420EE9 /* MapPin.swift */; };
 		B308277B29A2BCF400420EE9 /* OpenInviteSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277A29A2BCF400420EE9 /* OpenInviteSessionCell.swift */; };
 		B308277E29A2FC8300420EE9 /* TimeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308277D29A2FC8300420EE9 /* TimeEntryView.swift */; };
@@ -64,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		35290E018C0928AB6C1E6A77 /* Pods-Motcha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.release.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.release.xcconfig"; sourceTree = "<group>"; };
+		5A0D10C3B7A52CD7B8E2B3EF /* Pods-Motcha.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.staging.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.staging.xcconfig"; sourceTree = "<group>"; };
+		6C8E503629AAB0AD00E814AE /* dev-amplifyconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "dev-amplifyconfiguration.json"; sourceTree = "<group>"; };
 		B0182FE31C0B9504E1BBF79A /* Pods-Motcha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motcha.debug.xcconfig"; path = "Target Support Files/Pods-Motcha/Pods-Motcha.debug.xcconfig"; sourceTree = "<group>"; };
 		B308277829A22F8700420EE9 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		B308277A29A2BCF400420EE9 /* OpenInviteSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInviteSessionCell.swift; sourceTree = "<group>"; };
@@ -142,11 +145,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6C8E503529AAAE1500E814AE /* configs */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8DB4264DAC7E00E662F2 /* amplifyconfiguration.json */,
+				6C8E503629AAB0AD00E814AE /* dev-amplifyconfiguration.json */,
+			);
+			path = configs;
+			sourceTree = "<group>";
+		};
 		9299B1D0223054C02138D278 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B0182FE31C0B9504E1BBF79A /* Pods-Motcha.debug.xcconfig */,
 				35290E018C0928AB6C1E6A77 /* Pods-Motcha.release.xcconfig */,
+				5A0D10C3B7A52CD7B8E2B3EF /* Pods-Motcha.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -251,6 +264,7 @@
 		ED37EC6926422A14005272D9 /* Motcha */ = {
 			isa = PBXGroup;
 			children = (
+				6C8E503529AAAE1500E814AE /* configs */,
 				EDB3BFC32655789200CE699A /* messaging-websocket */,
 				EDB3BFBD2654A38400CE699A /* entity */,
 				ED3B8DB7264DAE4400E662F2 /* service */,
@@ -263,7 +277,6 @@
 				ED37EC7526422A17005272D9 /* LaunchScreen.storyboard */,
 				ED37EC7826422A17005272D9 /* Info.plist */,
 				ED0301622703A78E005FE28F /* models */,
-				ED3B8DB4264DAC7E00E662F2 /* amplifyconfiguration.json */,
 				ED33A2F226544160000621B5 /* AppConfiguration.swift */,
 			);
 			path = Motcha;
@@ -410,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED37EC7726422A17005272D9 /* LaunchScreen.storyboard in Resources */,
+				6C8E503729AAB0AD00E814AE /* dev-amplifyconfiguration.json in Resources */,
 				ED37EC7426422A17005272D9 /* Assets.xcassets in Resources */,
 				ED37EC7226422A14005272D9 /* Main.storyboard in Resources */,
 				ED3B8DB5264DAC7E00E662F2 /* amplifyconfiguration.json in Resources */,
@@ -538,6 +552,87 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6C8E503829ABBB6E00E814AE /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
+		};
+		6C8E503929ABBB6E00E814AE /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A0D10C3B7A52CD7B8E2B3EF /* Pods-Motcha.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Motcha/Motcha.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JH979G75UV;
+				INFOPLIST_FILE = Motcha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.motcha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
 		ED37EC8F26422A18005272D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -664,14 +759,14 @@
 				CODE_SIGN_ENTITLEMENTS = Motcha/Motcha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BMBFCQ6T88;
+				DEVELOPMENT_TEAM = JH979G75UV;
 				INFOPLIST_FILE = Motcha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mochamatcha.motcha;
+				PRODUCT_BUNDLE_IDENTIFIER = app.motcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -691,14 +786,14 @@
 				CODE_SIGN_ENTITLEMENTS = Motcha/Motcha.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BMBFCQ6T88;
+				DEVELOPMENT_TEAM = JH979G75UV;
 				INFOPLIST_FILE = Motcha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mochamatcha.motcha;
+				PRODUCT_BUNDLE_IDENTIFIER = app.motcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -715,6 +810,7 @@
 			buildConfigurations = (
 				ED37EC8F26422A18005272D9 /* Debug */,
 				ED37EC9026422A18005272D9 /* Release */,
+				6C8E503829ABBB6E00E814AE /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -724,6 +820,7 @@
 			buildConfigurations = (
 				ED37EC9226422A18005272D9 /* Debug */,
 				ED37EC9326422A18005272D9 /* Release */,
+				6C8E503929ABBB6E00E814AE /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
