@@ -15,6 +15,7 @@ class ChannelTableViewController: UITableViewController {
     private let userArn = AuthService.currentUser?.chimeAppInstanceUserArn ?? ""
     private let chimeMessagingService = AWSChimeSDKMessagingService.shared
     private let chimeIdentityService = AWSChimeSDKIdentityService.shared
+    private let chimeChannelService = AWSChimeSDKMessagingChannel()
     private let TAG = "ChannelTableViewController"
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,6 +24,11 @@ class ChannelTableViewController: UITableViewController {
         super.viewDidLoad()
         registerForPushNotifications()
         loadChannels()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+    }
+    
+    @objc func addTapped(gestureRecognizer: UIGestureRecognizer) {
+        self.createChannel(name: "TestCreate")
     }
 
     // MARK: - TableView Data Source
@@ -67,6 +73,33 @@ class ChannelTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        }
+    }
+    
+    private func createChannel(name: String) {
+        let appInstanceArn = AppConfiguration.appInstanceArn
+        let clientRequestToken = UUID().uuidString
+        let mode = "UNRESTRICTED"
+        let privacy = "PRIVATE"
+
+        var requestBody = [
+           "AppInstanceArn": appInstanceArn, // required
+           "ClientRequestToken": clientRequestToken, // required
+           
+           "Mode": mode, // not required
+           "Name": name, // required
+           "Privacy": privacy, // not required
+        ]
+            
+        let error = {
+            print("Are we supposed to do something here?")
+        }
+        
+        do {
+            let channelService = try AWSChimeSDKMessagingSendChannelMessageRequest(dictionary: requestBody, error: error())
+            
+        } catch {
+            print("Motcha failed to create channel")
         }
     }
     
