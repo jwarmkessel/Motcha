@@ -11,15 +11,30 @@ import Amplify
 import AmplifyPlugins
 import UserNotifications
 
+enum AmplifyConfigError: Error {
+    case invalidConfig
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var deviceToken: String?
+    
+    func getAmplifyConfiguration() throws -> AmplifyConfiguration{
+        let config = Bundle.main.object(forInfoDictionaryKey: "Build Scheme Config") as! String
+        // Default production amplify configuration.
+        guard let configurationFile = config == "Sandbox" ?
+                Bundle.main.url(forResource: "sandbox-amplifyconfiguration", withExtension: ".json") :
+                Bundle.main.url(forResource: "amplifyconfiguration", withExtension: ".json") else {
+            throw AmplifyConfigError.invalidConfig
+        }
+        return try AmplifyConfiguration(configurationFile: configurationFile)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         do {
             try Amplify.add(plugin: AWSCognitoAuthPlugin())
             try Amplify.add(plugin: AWSS3StoragePlugin())
-            try Amplify.configure()
+            try Amplify.configure(getAmplifyConfiguration())
         } catch {
             print("An error occurred setting up Amplify: \(error)")
         }
