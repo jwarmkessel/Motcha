@@ -119,4 +119,21 @@ class AWSChimeSDKMessagingService {
             completion(response, error)
         }
     }
+    
+    func createChannel(
+        name: String?,
+        completion: @escaping (AWSChimeSDKMessagingCreateChannelResponse?, Error?) -> Void) {
+        
+            let request: AWSChimeSDKMessagingCreateChannelRequest = AWSChimeSDKMessagingCreateChannelRequest()
+            request.name = name
+            request.appInstanceArn = AppConfiguration.appInstanceArn
+            request.clientRequestToken = UUID().uuidString
+            request.mode = .unrestricted
+            request.privacy = .private
+            request.chimeBearer = AuthService.currentUser?.chimeAppInstanceUserArn ?? ""
+            
+            awsChimeSDKMessagingClient?.createChannel(request) { response, error in
+                print("response \(response) and \(error)")
+            }
+    }
 }

@@ -15,6 +15,7 @@ class ChannelTableViewController: UITableViewController {
     private let userArn = AuthService.currentUser?.chimeAppInstanceUserArn ?? ""
     private let chimeMessagingService = AWSChimeSDKMessagingService.shared
     private let chimeIdentityService = AWSChimeSDKIdentityService.shared
+    
     private let TAG = "ChannelTableViewController"
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,6 +24,18 @@ class ChannelTableViewController: UITableViewController {
         super.viewDidLoad()
         registerForPushNotifications()
         loadChannels()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+    }
+    
+    //TODO - channel names should not be hardcoded
+    @objc func addTapped(gestureRecognizer: UIGestureRecognizer) {
+        chimeMessagingService.createChannel(name: "testName") { response, error in
+            guard error == nil else {
+                print(error)
+                return
+            }
+            print("success")
+        }
     }
 
     // MARK: - TableView Data Source
