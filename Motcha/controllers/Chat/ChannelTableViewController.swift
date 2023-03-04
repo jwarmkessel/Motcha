@@ -27,6 +27,7 @@ class ChannelTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
     }
     
+    //TODO - channel names should not be hardcoded
     @objc func addTapped(gestureRecognizer: UIGestureRecognizer) {
         chimeMessagingService.createChannel(name: "testName") { response, error in
             guard error == nil else {
