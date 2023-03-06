@@ -7,8 +7,14 @@
 //
 
 import AWSChimeSDKIdentity
+import AWSCognitoIdentityProvider
 
 class AWSChimeSDKIdentityService {
+
+    private enum Constants {
+        static let userPool = "us-east-1_Tv39HaVYF"
+        static let identityPool = "us-east-1:9c0d0e1c-387c-48ef-9c46-fe2e69eda419"
+    }
     
     static let shared = AWSChimeSDKIdentityService()
     private var awsChimeSDKIdentityClient: AWSChimeSDKIdentity?
@@ -84,6 +90,25 @@ class AWSChimeSDKIdentityService {
         
         awsChimeSDKIdentityClient?.deregisterAppInstanceUserEndpoint(request) { error in
             completion(error)
+        }
+    }
+    
+    func listAllUsers(completion: @escaping (AWSCognitoIdentityProviderListUsersResponse?, Error?) -> Void) {
+        //https://stackoverflow.com/questions/42351925/awss3-region-plist-configuration-issue-the-service-configuration-is-nil
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,identityPoolId: Constants.identityPool)
+        let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
+
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
+        let provider = AWSCognitoIdentityProvider.default()
+        guard let request = AWSCognitoIdentityProviderListUsersRequest() else {
+            return
+        }
+        
+        request.userPoolId = Constants.userPool
+
+        provider.listUsers(request) { response, error in
+            completion(response, error)
         }
     }
 }
