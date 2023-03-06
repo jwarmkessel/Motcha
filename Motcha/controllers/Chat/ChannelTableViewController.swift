@@ -31,7 +31,7 @@ class ChannelTableViewController: UITableViewController {
     @objc func addTapped(gestureRecognizer: UIGestureRecognizer) {
         chimeMessagingService.createChannel(name: "testName") { response, error in
             guard error == nil else {
-                print(error)
+                print(error.debugDescription)
                 return
             }
             print("success")
