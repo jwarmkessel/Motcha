@@ -8,15 +8,15 @@
                 "CredentialsProvider": {
                     "CognitoIdentity": {
                         "Default": {
-                            "PoolId": "us-east-1:9c0d0e1c-387c-48ef-9c46-fe2e69eda419",
+                            "PoolId": "us-east-1:9316b6c5-9ef3-43d3-be26-5bc4426dd782",
                             "Region": "us-east-1"
                         }
                     }
                 },
                 "CognitoUserPool": {
                     "Default": {
-                        "PoolId": "us-east-1_Tv39HaVYF",
-                        "AppClientId": "5e63gfbtp51p032o145vi49cf4",
+                        "PoolId": "us-east-1_H424cT7Ad",
+                        "AppClientId": "32nlsrb988js6fcergq4le5smv",
                         "Region": "us-east-1"
                     }
                 },
@@ -31,7 +31,7 @@
     "storage": {
         "plugins": {
             "awsS3StoragePlugin": {
-                  "bucket": "my-demo-stack-chatattachmentsbucket-l6qgutvseciz",
+                  "bucket": "motcha-chatattachmentsbucket-jek98spnfhjr",
                   "region": "us-east-1"
             }
         }
