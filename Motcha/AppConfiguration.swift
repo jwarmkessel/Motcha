@@ -18,6 +18,7 @@ struct AwsConfig {
     // API endpoint of lambda functions.
     let apiGatewayInvokeUrl: String
     // Service identifier of the Pinpoint resource.
+    // Pinpoint ARN format: arn:aws:mobiletargeting:region:accountId:apps/projectId
     let pinpointAppArn: String
 }
 
@@ -25,7 +26,7 @@ let SANDBOX_AWS_CONFIG = AwsConfig(
     region: "us-east-1",
     appInstanceArn: "arn:aws:chime:us-east-1:022636083072:app-instance/f029c133-f54a-4a7a-9a89-02462fd63c2b",
     apiGatewayInvokeUrl: "https://exiivcxeza.execute-api.us-east-1.amazonaws.com/prod/",
-    pinpointAppArn: "PINPOINT_APPLICATION_ARN")
+    pinpointAppArn: "arn:aws:mobiletargeting:us-east-1:022636083072:apps/32adbab46d59418b90344e36e708f676")
 
 let PROD_CONFIG = AwsConfig(
     region: "us-east-1",
