@@ -29,8 +29,8 @@ let SANDBOX_AWS_CONFIG = AwsConfig(
 
 let PROD_CONFIG = AwsConfig(
     region: "us-east-1",
-    appInstanceArn: "arn:aws:chime:us-east-1:431557582387:app-instance/17145b22-ded4-4762-8e64-344d26c323aa",
-    apiGatewayInvokeUrl: "https://3qe9qan1ai.execute-api.us-east-1.amazonaws.com/prod/",
+    appInstanceArn: "arn:aws:chime:us-east-1:431557582387:app-instance/46de27d0-d840-46da-823e-45ce37b7b18d",
+    apiGatewayInvokeUrl: "https://jtuq1nnxm1.execute-api.us-east-1.amazonaws.com/prod/",
     pinpointAppArn: "PINPOINT_APPLICATION_ARN")
 
 let config = Bundle.main.object(forInfoDictionaryKey: "Build Scheme Config") as! String
